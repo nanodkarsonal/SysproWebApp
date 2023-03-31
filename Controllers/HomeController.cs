@@ -11,8 +11,11 @@ namespace TestSysproWcfWebApp.Controllers
     {
         public ActionResult Index()
         {
-            SYSPROWCFServicesPrimitiveClient client = new SYSPROWCFServicesPrimitiveClient("net.tcp://localhost:91/SYSPROWCFService/Soap", SYSPROWCFBinding.NetTcp);
+            //SYSPROWCFServicesPrimitiveClient client = new SYSPROWCFServicesPrimitiveClient("net.tcp://localhost:91/SYSPROWCFService/Soap", SYSPROWCFBinding.NetTcp);
+            SYSPROWCFServicesPrimitiveClient client = new SYSPROWCFServicesPrimitiveClient("net.tcp://localhost:31001/SYSPROWCFService", SYSPROWCFBinding.NetTcp);
             var version = client.GetVersion();
+            var name = client.GetServiceName();
+            var guid = client.Logon("kilowott", "kilowott", "C", "");
             return View();
         }
 
