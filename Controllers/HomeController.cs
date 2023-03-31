@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SYSPROWCFServicesClientLibrary40;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,8 @@ namespace TestSysproWcfWebApp.Controllers
     {
         public ActionResult Index()
         {
+            SYSPROWCFServicesPrimitiveClient client = new SYSPROWCFServicesPrimitiveClient("net.tcp://localhost:91/SYSPROWCFService/Soap", SYSPROWCFBinding.NetTcp);
+            var version = client.GetVersion();
             return View();
         }
 
