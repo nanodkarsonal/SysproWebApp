@@ -16,6 +16,7 @@ namespace TestSysproWcfWebApp.Controllers
             var version = client.GetVersion();
             var name = client.GetServiceName();
             var guid = client.Logon("kilowott", "kilowott", "C", "");
+            
             return View();
         }
 
